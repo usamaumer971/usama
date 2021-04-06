@@ -1,0 +1,172 @@
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-md-6 col-lg-8">
+    </div>
+    <div class="col-md-6 col-lg-4"></div>
+  </div>
+
+  <!-- Content Row -->
+  <div class="row">
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Active products</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">{{products.length}}</div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-th-list fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Orders in Que</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">{{orders.length}}</div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-shopping-cart fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-info shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Earnings</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">RS {{earning}}</div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pending Requests Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">New Messages</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">{{messages}}</div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-comments fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+
+    <div class="col-lg-8">
+
+      <!--            <div class="row">-->
+      <!--                <div class="col">-->
+      <!--                    <div class="card shadow bg-primary-light mb-4">-->
+      <!--                        <div class="row">-->
+      <!--                            <div class="col-lg-7 p-5">-->
+      <!--                                <h1 class="text-primary">Welcome Bilal!</h1>-->
+      <!--                                <blockquote class="blockquote">-->
+      <!--                                    <p class="mb-0 font-italic">"Lorem ipsum dolor sit amet, consectetur adipisicing elit."</p>-->
+      <!--                                </blockquote>-->
+      <!--                            </div>-->
+      <!--                            <div class="col-lg-5 p-5 p-lg-4 order-first order-lg-last">-->
+      <!--                                <img src="./assets/images/welcome-image.svg" alt="" class="img-fluid p-0 m-0">-->
+      <!--                            </div>-->
+      <!--                        </div>-->
+      <!--                    </div>-->
+      <!--                </div>-->
+      <!--            </div>-->
+
+      <div class="row">
+        <div class="col">
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Products</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <p *ngIf="products.length == 0" class="text-center p-3 pt-4">No product found</p>
+                <table *ngIf="products.length> 0" class="table">
+                  <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Sales Price</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let product of products;">
+                    <th scope="row">{{product.name}}</th>
+                    <td>{{product.brand}}</td>
+                    <td>{{product.category}}</td>
+                    <td>{{product.salesPrice}}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+
+      <div class="row">
+        <div class="col">
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Pending Orders</h6>
+            </div>
+            <div class="card-body">
+              <p class="text-center p-3 pt-4">No order found</p>
+              <!--              <div class="row">-->
+              <!--                <div class="col-md-8 mb-3 mb-md-0">-->
+              <!--                  <h5><strong>Customer 1</strong></h5>-->
+              <!--                  <p class="m-0">12:00 Oct 12, 2020</p>-->
+              <!--                </div>-->
+              <!--                <div class="col-md-4 text-md-center">-->
+              <!--                  <a href="#" class="btn btn-outline-primary btn-sm vertical-center">See More</a>-->
+              <!--                </div>-->
+              <!--              </div>-->
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

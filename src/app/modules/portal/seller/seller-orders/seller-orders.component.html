@@ -1,0 +1,107 @@
+<app-loading *ngIf="isLoading === 1"></app-loading>
+<app-error *ngIf="isLoading === -1"></app-error>
+<div class="container-fluid" *ngIf="isLoading === 0">
+
+   <!--    <div class="d-sm-flex align-items-center justify-content-between mb-4">-->
+  <!--        <h1 class mb-0 text-gray-800">orders</h1>-->
+  <!--    </div>-->
+
+
+  <!--    <div class="row mb-4">-->
+  <!--        <div class="col-md-6 col-lg-8">-->
+
+  <h1 class="pl-2">Orders</h1>
+   <div class="d-grid gap-2 d-md-block ml-4 mt-3 mb-3">
+     <button type="button" class="btn btn-sm ">All</button>
+     <button type="button" class="btn btn-sm">Pending</button>
+     <button type="button" class="btn btn-sm">Ready To Ship</button>
+     <button type="button" class="btn btn-sm">Shipped</button>
+     <button type="button" class="btn btn-sm ">Delivered</button>
+     <button type="button" class="btn btn-sm ">Cancelled</button>
+     <button type="button" class="btn btn-sm ">Returned</button>
+     <button type="button" class="btn btn-sm ">Failed Delivery</button>
+   </div>
+
+  <div class="card shadow">
+    <div class="card-header d-flex" [ngClass]="{'border-0' : orders.length> 0}">
+      <input class="input-width mr-2" type="text" id="name" placeholder="Order Number">
+      <input class="input-width mr-2" type="text" id="seller" placeholder="Customer">
+      <input class="input-width mr-2" type="text" id="shop" placeholder="Product">
+      <input class="input-width mr-2" type="text" id="Product Tag" placeholder="Product Tag">
+      <input class="input-width mr-2" type="text" id="brandName" placeholder="Seller SKU">
+      <input class="input-width mr-2" type="text" id="brandName" placeholder="Payment">
+      <button type="button" class="btn btn-sm btn-secondary ml-4">Seach</button>
+    </div>
+  </div>
+
+   <!-- Table -->
+  <div class="row mt-2">
+    <div class="col">
+      <div class="card shadow">
+        <div class="table-responsive">
+          <p *ngIf="orders.length == 0" class="text-center p-3 pt-4">No order found</p>
+          <table *ngIf="orders.length> 0" class="table align-items-center table-flush">
+            <thead class="thead-light">
+            <tr>
+              <th class="tableHeader" scope="col"><h4>Document</h4></th>
+              <th class="tableHeader" scope="col"><h4>Order No</h4></th>
+              <th class="tableHeader" scope="col"><h4>Order Date</h4></th>
+              <th class="tableHeader" scope="col"><h4>Pending Since</h4></th>
+              <th class="tableHeader" scope="col"><h4>Payment Method</h4></th>
+              <th class="tableHeader" scope="col"><h4>Retail Price</h4></th>
+              <th class="tableHeader" scope="col"><h4>#</h4></th>
+              <th class="tableHeader" scope="col"><h4>Status</h4></th>
+              <th class="tableHeader" scope="col"><h4>Shipment-On-Time SLA</h4></th>
+              <th class="tableHeader" scope="col"><h4>Printed</h4></th>
+              <th class="tableHeader" scope="col"><h4>Actions</h4></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let order of orders;">
+              <td>
+                {{order.document}}
+              </td>
+              <td>
+                {{order.orderNo}}
+              </td>
+              <td>
+                {{order.orderDate}}
+              </td>
+              <td>
+                {{order.pendingSince}}
+              </td>
+              <td>
+                {{order.paymentMethod}}
+              </td>
+              <td>
+                {{order.retailPrice}}
+              </td>
+              <td>
+                {{order.no}}
+              </td>
+              <td>
+                {{order.status | titlecase}}
+              </td>
+              <td>
+                {{order.shipmentOnTimeSLA}}
+              </td>
+              <td>
+                {{order.printed}}
+              </td>
+              <td>
+                {{order.actions }}
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--        </div>-->
+  <!--        <div class="col-md-6 col-lg-4">d</div>-->
+  <!--    </div>-->
+
+
+</div>
