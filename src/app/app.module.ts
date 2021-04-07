@@ -45,6 +45,7 @@ import { AdminPendingSellersComponent } from './modules/portal/admin/admin-pendi
 import { AdminPendingProductsComponent } from './modules/portal/admin/admin-pending-products/admin-pending-products.component';
 import { ContactUsComponent } from './modules/home/contact-us/contact-us.component';
 import { SellerReviewsComponent } from './modules/portal/seller/seller-reviews/seller-reviews.component';
+import { CheckoutComponent } from './modules/home/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -89,6 +90,7 @@ import { SellerReviewsComponent } from './modules/portal/seller/seller-reviews/s
     AdminPendingProductsComponent,
     ContactUsComponent,
     SellerReviewsComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row form-div">
+            <div class="col-md-6">
+                <label class="label"> First Name </label>
+                <input type="text" class="form-control"  [formControl]="FirstName">
+                <label class="label"> Phone No  </label>
+                <input type="number" class="form-control input-div" [formControl]="PhoneNo">
+                <label class="label"> City </label>
+                  <select class="form-control" id="exampleFormControlSelect1" [formControl]="City">
+                      <option>Rawalpindi</option>
+                      <option>Lahore</option>
+                      <option>Multan</option>
+                    </select>
+                
+                  <label class="label"> Payment  </label>
+                <select class="form-control" id="exampleFormControlSelect1" [formControl]="Payment">
+                    <option>PayPal</option>
+                    <option>JazzCash</option>
+                    <option>Easypaisa</option>
+                  </select>
+            </div>
+            <div class="col-md-6">
+                <label class="label"> Last Name </label>
+                <input type="text" class="form-control input-div" [formControl]="LastName">
+                <label class="label"> Address </label>
+                <input type="text" class="form-control input-div" [formControl]="Address">
+                <label class="label"> Province </label>
+                <select class="form-control" id="exampleFormControlSelect1" [formControl]="Province">
+                    <option>Punjab</option>
+                    <option>Sindh</option>
+                  </select>
+                  
+               <!-- <div class="text-right"> <a href="#" class="btn btn-primary btn-lg active save-btn" role="button" aria-pressed="true">Save</a>
+               </div> -->
+            </div>
+            
+            <table class="table table-borderless table">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let item of getcartDetail">
+                 
+                  <tr>
+                    <td>{{item.product.name}}</td>
+                    <td>{{item.product.brand}}</td>
+                    <td>{{item.product.salesPrice}}</td>
+                    <td>{{item.productQuantity}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card" style="padding: 20px; margin-top: 30%; background-color: rgb(253, 253, 253);">
+          <button type="button" class="btn btn-primary btn-lg label" disabled>Place Order</button>
+           <div class="label"><strong><i class="fas fa-map-marker-alt"></i></strong> {{ FirstName.value }} {{ LastName.value }}</div>
+           <div class="label">{{ Address.value }} {{ City.value }} {{ Province.value }} </div>
+           <div class="label"><strong><i class="fas fa-phone"></i></strong> {{ PhoneNo.value }}</div>
+           
+           <div class="label"><strong><i class="fas fa-money-bill-alt"></i> </strong> {{ Payment.value }}</div>
+            <h4 class="label">Rs. {{total | number}} </h4>
+            <button type="button" class="btn btn-primary btn-lg label" disabled>Place Order</button>
+          </div>
+          </div>
+    </div>
+</div>

@@ -27,6 +27,7 @@ import {AdminPendingSellersComponent} from './modules/portal/admin/admin-pending
 import {AdminPendingProductsComponent} from './modules/portal/admin/admin-pending-products/admin-pending-products.component';
 import {ContactUsComponent} from './modules/home/contact-us/contact-us.component';
 import { SellerReviewsComponent } from './modules/portal/seller/seller-reviews/seller-reviews.component';
+import { CheckoutComponent } from './modules/home/checkout/checkout.component';
 
 
 const routes: Routes = [
@@ -197,6 +198,10 @@ const routes: Routes = [
       {
         path: "cart",
         component: CartPageComponent,
+      },
+      {
+        path: "checkout",
+        component: CheckoutComponent,
       },
       {
         path: "affiliation-program",

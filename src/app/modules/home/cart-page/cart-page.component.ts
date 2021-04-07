@@ -126,6 +126,7 @@ export class CartPageComponent implements OnInit {
     // console.log('Total sum of usama = ',sum);
     this.total=sum;
     console.log('!st Total sum of usama = ',this.total);
+    localStorage.setItem('localCart',JSON.stringify(this.getcartDetail));
     // let sum = this.getcartDetail
     // this.CartitemPrice=sum;
     // console.log(sum);
@@ -146,6 +147,6 @@ export class CartPageComponent implements OnInit {
         }
       }
     }
-
   } 
+  
 }
