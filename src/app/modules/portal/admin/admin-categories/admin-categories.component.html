@@ -19,6 +19,7 @@
             <tr>
               <th scope="col">Category</th>
               <th scope="col">SubCategories</th>
+              <th scope="col">Action</th>
 <!--              <th scope="col">Action</th>-->
             </tr>
             </thead>
@@ -32,6 +33,11 @@
                   <li>{{subCategory.name}}</li>
                 
                 </ng-template>
+              </td>
+              <td>
+                <a [routerLink]=""><i class="fas fa-trash-alt btn btn-danger" style="padding: 6px; margin-left: 10px;"></i></a>
+                <a [routerLink]=""><i class="fas fa-edit btn btn-primary" style="padding: 6px; margin-left: 10px;"></i></a>
+              </td> 
 
 
             </tbody>
