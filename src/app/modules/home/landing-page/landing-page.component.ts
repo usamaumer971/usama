@@ -3,6 +3,7 @@ import {ProductService} from '../../../shared/services/product/product.service';
 import {SellerService} from '../../../shared/services/Seller/seller.service';
 import {CategoryService} from '../../../shared/services/category/category.service';
 
+
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -14,7 +15,8 @@ export class LandingPageComponent implements OnInit {
   products = [];
   categories = [];
   sellers = [];
-  
+
+ 
 
   constructor(
     private productService: ProductService,
@@ -25,8 +27,9 @@ export class LandingPageComponent implements OnInit {
     this.getSellers();
     this.getCategories();
   }
-
+ 
   ngOnInit() {
+    
 
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CategoryService} from '../../../shared/services/category/category.service';
 import {CartNumService} from 'src/app/cart-num.service';
+import { HostListener } from '@angular/core';
 
 @Component({ 
   selector: 'app-header',
@@ -11,6 +12,7 @@ export class HeaderComponent implements OnInit {
 
   account = sessionStorage.getItem('c_name');
   categories = [];
+  scrolled = 0;
 
   constructor(
     private categoryService: CategoryService,
@@ -27,6 +29,18 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.cartitemFunc();
   }
+  
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll($event) {
+    const numb = window.scrollY;
+    if (numb >= 600){
+      this.scrolled = 1;
+    }
+    else {
+      this.scrolled = 0;
+    }
+  }
+
   cartItem:any= 0;
   cartitemFunc(){
     if(localStorage.getItem('localCart')!=null){

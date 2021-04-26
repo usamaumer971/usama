@@ -9,12 +9,15 @@
   padding: 0 !important;
 }
 .col-md-2{
+ 
   padding: 0 !important;
 }
 .side-div{
   background-color:skyblue;
 }
-
+.menu{
+  width: fit-content !important;
+}
 ul {
   padding-left: 2px;
   font-size: 15px;
@@ -37,14 +40,13 @@ li a:hover {
   background-color: #555;
   color: white;
 }
-
 .dropdown-content {
   display: none;
   top: 0;
   position: absolute;
   left: 250px;
   background-color: white;
-  min-width: 200px;
+  min-width: 180px;
   height: 300px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 500  ;
